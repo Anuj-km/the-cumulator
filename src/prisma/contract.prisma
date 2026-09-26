@@ -1,0 +1,15 @@
+// use prisma-next
+
+model Movie {
+  id          Int      @id @default(autoincrement())
+  title       String
+  year        Int?
+  rating      Float?
+  status      String   @default("WATCHED")
+  dateWatched DateTime?
+  review      String?
+  favorite    Boolean  @default(false)
+  poster      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
